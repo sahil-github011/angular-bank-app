@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="header">
+        <div class="header-user"><h1>Welcome {{user}}</h1></div>
+        <p style="color: white;width: 30%;" class="date" >{{sDate | date}}</p>
+        <div ><a routerLink="/trasaction" class="transaction">view trasactions</a></div>
+        <div class="header-btn">
+            <input type="button" value="Delete" (click)="delete()" class="delete-btn" >
+            <input type="button" value="Logout" (click)="logout()" class="logout-btn" >
+        </div>
+       
+    </div>
+    <app-delete [item]="acno" (Oncancel)="onCancel()" (OnDelete)="onDelete($event)" ></app-delete>
+    <div [ngClass]="acno? 'style1': '' " class="container-2" >
+        <div class="deposit">
+            <div class="dp-wt-body">
+                <h2>Deposit</h2>
+                    <form [formGroup]="depositForm">
+                        <input type="text" formControlName="acno" name="accountNumber" id="dpAcno" placeholder="Account number">
+                        <div *ngIf="this.depositForm.get('acno')?.errors && this.depositForm.get('acno')?.touched" style="color: #ff4343;">invalid account number</div>
+    
+                        <input type="text" formControlName="pswd" name="password" id="dpPswd" placeholder="Password">
+                        <div *ngIf="this.depositForm.get('pswd')?.errors && this.depositForm.get('pswd')?.touched" style="color: #ff4343;">invalid password </div>
+    
+                        <input type="text" formControlName="dAmt"  name="depositAmount" id="dpAmount" placeholder="Amount">
+                        <div *ngIf="this.depositForm.get('dAmt')?.errors && this.depositForm.get('dAmt')?.touched" style="color: #ff4343;">invalid amount</div>
+    
+                        <button type="button" (click)="deposit()">Deposit</button>
+                    </form>
+            </div>
+        </div>
+        <div class="withdraw">
+            <div class="dp-wt-body">
+                <h2>Withdraw</h2>
+                <form [formGroup]="withdrawForm">
+                    <input type="text" formControlName="acno1" name="accountNumber" id="wtAcno" placeholder="Account number">
+                    <div *ngIf="this.withdrawForm.get('acno1')?.errors && this.withdrawForm.get('acno1')?.touched" style="color: #ff4343;">invalid account number</div>
+
+                    <input type="text" formControlName="pswd1" name="password" id="wtPswd" placeholder="Password">
+                    <div *ngIf="this.withdrawForm.get('pswd1')?.errors && this.withdrawForm.get('pswd1')?.touched" style="color: #ff4343;">invalid password</div>
+
+                    <input type="text" formControlName="wAmt"  name="withdrawAmount" id="wtAmount" placeholder="Amount">
+                    <div *ngIf="this.withdrawForm.get('wAmt')?.errors && this.withdrawForm.get('wAmt')?.touched" style="color: #ff4343;">invalid Amount</div>
+
+                    <button type="button" (click)="withdraw()">withdraw</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>

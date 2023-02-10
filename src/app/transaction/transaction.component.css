@@ -1,0 +1,19 @@
+h1{
+    text-align: center;
+    color: #2B3467;
+    margin: 20px 0;
+}
+table,th,td{
+    border: black 1px solid;
+    border-collapse: collapse;
+    background-color: #2B3467 ;
+    color: white;
+    padding: 15px 50px;
+    margin: auto;
+}
+a{
+    display: block;
+    text-align: center;
+    margin: 10px 0;
+    color: #2B3467;
+}

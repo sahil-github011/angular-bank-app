@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="reg-body">
+        <h2>Create account</h2>
+        <form [formGroup]="registerForm">
+            <input type="text"  formControlName="acno"  name="accountNumber" id="regAcno" placeholder="Account number">
+            <div *ngIf="this.registerForm.get('acno')?.errors && this.registerForm.get('acno')?.touched" style="color: #ff4343;">invalid account number</div>
+
+            <input type="text" formControlName="uname"  name="userName" id="regUname" placeholder="Username">
+            <div *ngIf="this.registerForm.get('uname')?.errors && this.registerForm.get('uname')?.touched" style="color: #ff4343;">invalid user name</div>
+
+            <input type="password"  formControlName="pswd" name="password" id="regPswd" placeholder="Password">
+            <div *ngIf="this.registerForm.get('pswd')?.errors && this.registerForm.get('pswd')?.touched" style="color: #ff4343;">invalid password</div>
+
+            <button type="button" (click)="register()">Register</button>
+        </form>
+       
+        <p>already have an account?</p>
+        <div style="width: fit-content; margin: auto;">
+            <a routerLink="" class="hover-underline-animation">Sign in</a>
+        </div>
+    </div>
+</div>

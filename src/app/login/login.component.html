@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="login-body">
+        <h2>Financial Fortress</h2>
+        <h4>{{aim}}</h4> <!-- string interpolation (component to view) -->
+        <form [formGroup]="loginForm">
+            <!-- Property binding - [attributes_name] = 'property'  (change)="acnoChange($event)"-->
+            <!-- Event binding using template referencing variables - #variable_name  #acno -->
+            <input type="text" formControlName="acno" name="accountNumber" id="loginAcno" [placeholder]="account">
+            <div *ngIf="this.loginForm.get('acno')?.errors && this.loginForm.get('acno')?.touched" style="color: #ff4343;">invalid account number</div>
+
+            <!-- Event binding using $event - (event_name) = function_name($event)  (change)="pswdChange($event)" -->
+            <!-- Event binding using template referencing variables - #variable_name #pswd  -->
+            <input type="password" formControlName="pswd" name="password" id="loginPswd" placeholder="Password">
+            <div *ngIf="this.loginForm.get('pswd')?.errors && this.loginForm.get('pswd')?.touched" style="color: #ff4343;">invalid password</div>
+
+            <button type="button" (click)="login()">Login</button>
+            <!-- Event binding - (event_name) = "function_name"  -->
+        </form>
+        <div style="width: fit-content; margin: auto;">
+            <a routerLink="register" class="hover-underline-animation">Sign up?</a>
+        </div>
+    </div>
+</div>  

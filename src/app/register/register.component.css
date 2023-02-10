@@ -1,0 +1,95 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.reg-body {
+    width: auto;
+    height: auto;
+    background-color: #2B3467;
+    border-radius: 5px;
+    padding: 0 40px;
+    padding-bottom: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.reg-body h2 {
+    color: white;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.reg-body input {
+    width: 250px;
+    padding: 10px;
+    display: block;
+    margin: 20px auto;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+.reg-body button {
+    color: #2B3467;
+    font-weight: bold;
+    padding: 5px 10px;
+    display: block;
+    margin: auto;
+    border-radius: 5px;
+    border: none;
+    transition: .5s;
+}
+
+.reg-body button:hover {
+    background-color: rgb(114, 114, 216);
+    color: white;
+}
+
+.reg-body p {
+    color: rgb(231, 241, 255);
+    text-align: center;
+    margin: 20px 0;
+    margin-bottom: 0;
+}
+
+.reg-body a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.reg-body a:hover {
+    color: rgb(231, 219, 219);
+}
+
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+    color:
+        #759fb9;
+}
+
+.hover-underline-animation:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color:
+        #a2cce7;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}

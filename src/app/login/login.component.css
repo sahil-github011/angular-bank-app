@@ -1,0 +1,94 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-body {
+    width: auto;
+    height: auto;
+    background-color: #2B3467;
+    border-radius: 5px;
+    padding: 0 40px;
+    padding-bottom: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.login-body h2 {
+    color: white;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.login-body h4 {
+    color: white;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.login-body input {
+    width: 250px;
+    padding: 10px;
+    display: block;
+    margin: 20px auto;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+.login-body button {
+    color: #2B3467;
+    font-weight: bold;
+    padding: 5px 10px;
+    display: block;
+    margin: auto;
+    border-radius: 5px;
+    border: none;
+    transition: .5s;
+}
+
+.login-body button:hover {
+    background-color: rgb(114, 114, 216);
+    color: white;
+}
+
+.login-body a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.login-body a:hover {
+    color: rgb(231, 219, 219);
+}
+
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+    color:
+        #0087ca;
+}
+
+.hover-underline-animation:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color:
+        #759fb9;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
